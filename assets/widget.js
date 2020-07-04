@@ -1,8 +1,8 @@
 var $j = jQuery.noConflict();
 
 $j(document).ready(function () {
-    var domain = "0aqf68wn39.scalacube.pro";
-    var id = "#playvds-widget-0aqf68wn39-scalacube-pro-widget";
+    var domain = "0aq.scalacube.pro";
+    var id = "#playvds-widget-0aq-scalacube-pro-widget";
     var url = "http://" + domain + "/playvds-widget/widget";
     var api = url + "/index.php";
     var main = $j(id).last();
@@ -15,7 +15,7 @@ $j(document).ready(function () {
     function send(method, callback, errorCallback) {
         var error = function () {
             if (errorCallback)
-                errorCallback({error: "internal"});
+                errorCallback({ error: "internal" });
         };
 
         $j.ajax(api + "/" + (method || "")).done(function (content) {
@@ -63,24 +63,24 @@ $j(document).ready(function () {
                 send(name, function (content) {
                     setPageContent(element, info, content, widget);
 
-                    $j("#playvds-widget-0aqf68wn39-scalacube-pro-widget").append("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css\">");
+                    $j("#playvds-widget-0aq-scalacube-pro-widget").append("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css\">");
 
-                    if ($j("#playvds-widget-0aqf68wn39-scalacube-pro-widget #playvds-version-site").last().hasClass("online")) {
-                        var str = $j("#playvds-widget-0aqf68wn39-scalacube-pro-widget .playvds-page  p").last().text();
+                    if ($j("#playvds-widget-0aq-scalacube-pro-widget #playvds-version-site").last().hasClass("online")) {
+                        var str = $j("#playvds-widget-0aq-scalacube-pro-widget .playvds-page  p").last().text();
                         str = str.substring(str.indexOf(':') + 2);
                         str = str.trim();
                         mas = str.split("/");
                         procen = 100 / mas[1] * mas[0];
                         ll = 100 - procen
                         contn = '<div class=\"playvds-monitor\"><div class=\"playvds-monitor-inside\" style=\"height:' + ll + '%\"></div></div>'
-                        $j("#playvds-widget-0aqf68wn39-scalacube-pro-widget .playvds-page p").last().remove();
+                        $j("#playvds-widget-0aq-scalacube-pro-widget .playvds-page p").last().remove();
                         setTable('green', "server online|" + mas[0] + "/" + mas[1], info.title, contn);
-                        $j("#playvds-widget-0aqf68wn39-scalacube-pro-widget .playvds-status").last().addClass("fa fa-check-circle green");
+                        $j("#playvds-widget-0aq-scalacube-pro-widget .playvds-status").last().addClass("fa fa-check-circle green");
 
 
                     } else {
                         setTable('red', "server Offline", info.title, "");
-                        $j("#playvds-widget-0aqf68wn39-scalacube-pro-widget .playvds-status").addClass("fa fa-times-circle red")
+                        $j("#playvds-widget-0aq-scalacube-pro-widget .playvds-status").addClass("fa fa-times-circle red")
                     }
                 });
             }
@@ -90,7 +90,7 @@ $j(document).ready(function () {
     }
 
     function setTable(colorfont, text, title, contn) {
-        $j("#playvds-widget-0aqf68wn39-scalacube-pro-widget .playvds-page p").last()
+        $j("#playvds-widget-0aq-scalacube-pro-widget .playvds-page p").last()
             .append("<table class=\"plavds-widget-info\">" +
                 "<tbody><tr>" +
                 "<td width=\"50px\">" +
